@@ -16,5 +16,12 @@ services:
     depends_on:
       - mongodb
 
+  express-js:
+    build: ./back-express/ #local Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+
 volumes: #creating a local docker volume for the mongodb data to persist in case of container restart
   mongodb-data:
