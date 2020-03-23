@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  express-js:
+    environment:
+      - $NODE_ENV=development
+    volumes:
+      - back-express/back.js:./back.js
