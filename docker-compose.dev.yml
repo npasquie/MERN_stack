@@ -3,6 +3,11 @@ version: "3.7"
 services:
   express-js:
     environment:
-      - $NODE_ENV=development
+      - NODE_ENV=development
+      - MONGO_NAME=${MONGO_NAME}
+      - MONGO_PORT=${MONGO_PORT}
+      - DB_NAME=${DB_NAME}
     volumes:
-      - back-express/back.js:./back.js
+      - type: bind
+        source: ${PROJECT_PATH}/back-express/back.js
+        target: /back.js
